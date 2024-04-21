@@ -11,7 +11,7 @@ function readFile1(filename1) {
             console.log(err);
         } else {
             console.log("\n\nThe content of the file is \n\n"+data);
-            console.log("Completed reading file1");
+            console.log("Completed reading file12");
         }
     });
 }
