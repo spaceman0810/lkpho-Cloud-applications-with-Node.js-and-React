@@ -17,7 +17,7 @@ app.post("/login/:name",(req,res)=>{
 })
 
 app.get("/:name",(req,res)=>{
-    res.send("Hello "+req.params.name)
+    res.send("\n Hello "+req.params.name)
 })
 
 app.listen(3333, () => {

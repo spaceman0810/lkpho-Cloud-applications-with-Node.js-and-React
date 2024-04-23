@@ -43,11 +43,11 @@ app.use("/auth", function auth(req,res,next){
                next();
            }
            else{
-               return res.status(403).json({message: "User not authenticated"})
+               return res.status(403).json({message: "\n User not authenticated"})
            }
         });
     } else {
-        return res.status(403).json({message: "User not logged in"})
+        return res.status(403).json({message: "\n User not logged in"})
     }
 });
 
@@ -67,9 +67,9 @@ app.post("/login", (req,res) => {
     req.session.authorization = {
       accessToken,username
   }
-  return res.status(200).send("User successfully logged in");
+  return res.status(200).send("\n User successfully logged in");
   } else {
-    return res.status(208).json({message: "Invalid Login. Check username and password"});
+    return res.status(208).json({message: "\n Invalid Login. Check username and password"});
   }
 });
 
@@ -80,18 +80,18 @@ app.post("/register", (req,res) => {
   if (username && password) {
     if (!doesExist(username)) { 
       users.push({"username":username,"password":password});
-      return res.status(200).json({message: "User successfully registred. Now you can login"});
+      return res.status(200).json({message: "\n User successfully registred. Now you can login"});
     } else {
-      return res.status(404).json({message: "User already exists!"});    
+      return res.status(404).json({message: "\n User already exists!"});    
     }
   } 
-  return res.status(404).json({message: "Unable to register user."});
+  return res.status(404).json({message: "\n Unable to register user."});
 });
 
 app.get("/auth/get_message", (req,res) => {
-  return res.status(200).json({message: "Hello, You are an authenticated user. Congratulations!"});
+  return res.status(200).json({message: "\n Hello, You are an authenticated user. Congratulations!"});
 })
 
 const PORT =5000;
 
-app.listen(PORT,()=>console.log("Server is running"));
+app.listen(PORT,()=>console.log("\n Server is running"));
